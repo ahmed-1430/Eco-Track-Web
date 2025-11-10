@@ -1,87 +1,64 @@
-import React, { useState } from 'react';
-import EcoTrackLogo from '../assets/Eco_Track_logo.webp';
-import { Link } from 'react-router';
+import React, { useState } from "react";
+import { Link } from "react-router";
+import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
+import EcoTrackLogo from "../assets/Eco_Track_logo.webp";
 
-const AvatarMenu = ({ user, handleLogout }) => (
-  <div className="dropdown dropdown-end dropdown-hover z-50">
-    <label tabIndex={0} className="btn btn-ghost btn-circle avatar cursor-pointer">
-      <div className="w-10 rounded-full">
-        <img src={user.avatar} alt="User Avatar" />
-      </div>
-    </label>
-
-    <ul
-      tabIndex={0}
-      className="menu menu-compact dropdown-content mt-1 p-2 shadow bg-base-100 rounded-box w-52"
-    >
-      <li><a>Profile</a></li>
-      <li><a>My Activities</a></li>
-      <li>
-        <button onClick={handleLogout} className="w-full text-left">
-          Logout
-        </button>
-      </li>
-    </ul>
-  </div>
-);
-
-const NavBar = () => {
-  const [user, setUser] = useState(null);
-
-  const handleLogin = () => setUser({ name: "Alex", avatar: "https://i.ibb.co/xK8WVtXF/avatar-Demo.jpg" }); /* just for test parpous onlyy */
-  const handleLogout = () => setUser(null);
+const NavBar = ({ user, handleLogout }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-base-100 shadow-sm">
-      <div className="navbar w-11/12 mx-auto px-4">
-        <div className="navbar-start">
-          <div className="dropdown lg:hidden">
-            <label tabIndex={0} className="btn btn-ghost">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
-            </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Home</a></li>
-              <li><a>Challenges</a></li>
-              <li><a>My Activities</a></li>
-              {!user ? (
-                <>
-                  <li><button onClick={handleLogin}>Login</button></li>
-                  <li><button>Register</button></li>
-                </>
-              ) : (
-                <>
-                  <li><a>Profile</a></li>
-                  <li><a>My Activities</a></li>
-                  <li><button onClick={handleLogout}>Logout</button></li>
-                </>
-              )}
-            </ul>
-          </div>
-          <Link to={'/'} className="text-xl flex items-center gap-2 cursor-pointer">
-            <img src={EcoTrackLogo} alt="EcoTrack Logo" className="h-10 w-10" /> EcoTrack</Link>
-          <div className="ml-10 hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li><a>Home</a></li>
-              <li><a>Challenges</a></li>
-              <li><a>My Activities</a></li>
-            </ul>
-          </div>
+    <header className="fixed w-full z-50 bg-white/20 backdrop-blur-md shadow-md">
+      <div className="w-11/12 mx-auto flex justify-between items-center py-3">
+        <div className="flex items-center space-x-2">
+          <img src={EcoTrackLogo} alt="EcoTrack Logo" className="w-10 h-10" />
+          <span className="font-bold text-xl text-green-600">EcoTrack</span>
         </div>
-
-        <div className="navbar-end flex items-center gap-2">
-          {user ? (
-            <AvatarMenu user={user} handleLogout={handleLogout} />
-          ) : (
+        <nav className="hidden md:flex items-center space-x-6 text-green-600 font-medium">
+          <Link to="/">Home</Link>
+          <Link to="/challenges">Challenges</Link>
+          {user && <Link to="/my-activities">My Activities</Link>}
+        </nav>
+        <div className="hidden md:flex items-center space-x-4">
+          {!user ? (
             <>
-              <button className="btn btn-outline" onClick={handleLogin}>Login</button>
-              <button className="btn btn-primary">Register</button>
+              <Link to="/login" className="px-4 py-1 bg-white text-green-600 rounded-lg shadow hover:bg-green-50 transition">Login</Link>
+              <Link to="/register" className="px-4 py-1 border border-white bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Register</Link>
             </>
+          ) : (
+            <div className="flex items-center space-x-2">
+              <FaUserCircle size={24} />
+              <span>{user.name}</span>
+              <button onClick={handleLogout} className="px-3 py-1 bg-red-500 rounded-lg hover:bg-red-600 transition">Logout</button>
+            </div>
           )}
         </div>
+        <button className="md:hidden text-green-600 focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </div>
-    </div>
+      {menuOpen && (
+        <div className="md:hidden bg-white/20 backdrop-blur-md shadow-lg w-full py-4 px-6 flex flex-col space-y-4 text-green-600 font-medium">
+          <Link to="/" onClick={() => setMenuOpen(false)}> Home</Link>
+          <Link to="/challenges" onClick={() => setMenuOpen(false)}>Challenges</Link>
+          {user && (
+            <Link to="/my-activities" onClick={() => setMenuOpen(false)}> My Activities</Link>
+          )}
+          <hr className="border-green-400/50" />
+          {!user ? (
+            <>
+              <Link to="/login" className="px-4 py-2 bg-white text-green-600 rounded-lg shadow hover:bg-green-50 transition" onClick={() => setMenuOpen(false)}>Login</Link>
+              <Link to="/register" className="px-4 py-2 border border-white bg-green-600 text-white rounded-lg hover:bg-green-700 transition" onClick={() => setMenuOpen(false)}>Register</Link>
+            </>
+          ) : (
+            <div className="flex items-center space-x-2">
+              <FaUserCircle size={24} />
+              <span>{user.name}</span>
+              <button onClick={() => { handleLogout(); setMenuOpen(false);}}className="px-3 py-1 bg-red-500 rounded-lg hover:bg-red-600 transition">Logout</button>
+            </div>
+          )}
+        </div>
+      )}
+    </header>
   );
 };
 
