@@ -5,7 +5,7 @@ import MainLayout from "../LayOuts/MainLayout";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout></MainLayout>,
+        element: <MainLayout></MainLayout>,        
     },  
     
     {
