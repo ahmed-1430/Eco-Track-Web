@@ -5,6 +5,7 @@ import Challenges from "../Pages/Challenges";
 import ChallengeDetail from "../Pages/ChallengeDetail";
 import AddChallenge from "../Pages/AddChallenge";
 import Register from "../Pages/Register";
+import Login from "../Pages/Login";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,16 @@ const router = createBrowserRouter([
             {
                 path: "", 
                 element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: "/login",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: "", 
+                element: <Login></Login>
             }
         ]
     },

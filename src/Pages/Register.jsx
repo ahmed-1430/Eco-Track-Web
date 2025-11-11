@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 import { auth, googleProvider } from '../FireBase/FireBase.init';
@@ -121,9 +121,7 @@ const Register = () => {
 
         <p className="mt-4 text-center text-gray-600">
           Already have an account?{' '}
-          <a href="/login" className="text-green-600 font-semibold hover:underline">
-            Login
-          </a>
+          <Link to={'/login'} className="text-green-600 font-semibold hover:underline">Login</Link>
         </p>
       </div>
     </div>
