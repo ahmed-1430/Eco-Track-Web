@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../LayOuts/MainLayout";
 import Home from "../Pages/Home";
 import Challenges from "../Pages/Challenges";
+import ChallengeDetail from "../Pages/ChallengeDetail";
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,16 @@ const router = createBrowserRouter([
             {
                 path: "", 
                 element: <Challenges></Challenges>
+            }
+        ]
+    },
+    {
+        path: "/challenges/:id",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: "", 
+                element: <ChallengeDetail></ChallengeDetail>
             }
         ]
     },  

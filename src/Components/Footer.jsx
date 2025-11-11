@@ -39,7 +39,7 @@ const Footer = () => {
                     </form>
                 </div>
             </div>
-            <div className="mt-8 border-t border-green-700 pt-4 text-center text-gray-400 text-sm">
+            <div className="w-11/12 mx-auto mt-8 border-t border-green-700 pt-4 text-center text-gray-400 text-sm">
                 <p>© 2025 EcoTrack. All rights reserved.</p>
                 <p>Committed to accessibility and privacy. Your data is secure and not shared with third parties.</p>
             </div>
