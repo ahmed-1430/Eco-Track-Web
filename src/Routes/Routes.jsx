@@ -3,6 +3,7 @@ import MainLayout from "../LayOuts/MainLayout";
 import Home from "../Pages/Home";
 import Challenges from "../Pages/Challenges";
 import ChallengeDetail from "../Pages/ChallengeDetail";
+import AddChallenge from "../Pages/AddChallenge";
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,16 @@ const router = createBrowserRouter([
             }
         ]
     },  
+    {
+        path: "/challenges/add",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: "",
+                element: <AddChallenge></AddChallenge>
+            }
+        ]
+    },
     
     {
         path: "/*",
