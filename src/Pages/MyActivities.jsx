@@ -3,7 +3,7 @@ import React from 'react';
 const MyActivities = () => {
   return (
     <div>
-      <h1>Coming</h1>
+      <h1>coming...</h1>
     </div>
   );
 };
