@@ -77,7 +77,7 @@ const Home = () => {
           {featuredChallenges.map((ch) => (
             <SwiperSlide key={ch._id}>
               <div className="relative">
-                <img src={ch.imageUrl} alt={ch.title} className="w-full h-[400px] object-fill brightness-75"/>
+                <img src={ch.imageUrl} alt={ch.title} className="w-full h-[400px] object-fill brightness-75" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
                   <h2 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
                     {ch.title}
@@ -135,6 +135,60 @@ const Home = () => {
         ) : (
           <p className="text-gray-500 text-center">No upcoming events found.</p>
         )}
+      </section>
+      {/* Why Go Green Section with relevant static data */}
+      <section className="w-11/12 mx-auto text-center py-12 bg-green-50 rounded-2xl shadow-inner mt-10 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">Why Go Green?</h2>
+        <p className="text-gray-600 max-w-4xl mx-auto mb-8">Sustainable living helps protect our planet and improves our quality of life. Here’s why it matters:</p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-left max-w-5xl mx-auto">
+          {[
+            " Reduce pollution and waste for a cleaner environment.",
+            " Conserve natural resources for future generations.",
+            " Lower your carbon footprint through mindful choices.",
+            " Promote biodiversity and protect wildlife habitats.",
+            " Build healthier communities with eco-friendly habits.",
+            " Save energy and money through sustainable practices."
+          ].map((item, index) => (
+            <div key={index} className="bg-white p-5 rounded-xl shadow hover:shadow-md transition-all border border-green-100">
+              <p className="text-gray-700 font-medium leading-relaxed">{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* How It Works Section with relevant static data */}
+      <section className="w-11/12 mx-auto text-center py-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8"> How It Works</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-10">Join our community and make a difference in just three simple steps.</p>
+        <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              title: "Join a Challenge",
+              desc: "Pick a sustainability challenge that matches your lifestyle and goals.",
+              icon: "🌱",
+            },
+            {
+              title: "Track Your Progress",
+              desc: "Monitor your daily actions and see how your efforts add up over time.",
+              icon: "📊",
+            },
+            {
+              title: "Share Your Tips",
+              desc: "Inspire others by sharing eco-friendly habits and success stories.",
+              icon: "💬",
+            },
+          ].map((step, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow hover:shadow-xl transition-all border-t-4 border-green-500"
+            >
+              <div className="text-5xl mb-4">{step.icon}</div>
+              <h3 className="text-xl font-bold text-green-700 mb-2">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
