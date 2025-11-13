@@ -45,7 +45,7 @@ const ChallengeFilter = ({ filters, setFilters }) => {
         <FaUsers className="text-green-600" />
         <input type="number" name="participantsMax"  placeholder="Max Participants" value={filters.participantsMax} onChange={handleChange} className="border border-gray-300 rounded-lg p-2 w-fit focus:outline-none focus:ring-2 focus:ring-green-500"/>
       </div>
-      <button onClick={handleReset} className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"> <FaFilter /> Reset Filters</button>
+      <button onClick={handleReset} className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition cursor-pointer"> <FaFilter /> Reset Filters</button>
     </div>
   );
 };

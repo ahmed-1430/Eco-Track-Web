@@ -10,6 +10,7 @@ import MyActivities from "../Pages/MyActivities";
 import JoinChallenge from "../Pages/JoinChallenge";
 import MyActivityDetail from "../Pages/MyActivityDetail";
 import Reset from "../Pages/Reset";
+import Profile from "../Pages/Profile";
 
 
 const router = createBrowserRouter([
@@ -100,6 +101,16 @@ const router = createBrowserRouter([
             {
                 path: "", 
                 element: <Login></Login>
+            }
+        ]
+    },
+    {
+        path: "/profile",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: "",
+                element: <Profile></Profile>
             }
         ]
     },
