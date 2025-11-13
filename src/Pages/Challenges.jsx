@@ -44,8 +44,9 @@ const Challenges = () => {
   }, [filters]);
 
   return (
-    <div className="w-11/12 mx-auto py-4 md:py-8 space-y-6 pt-20">
-      <h1 className="text-3xl font-bold text-green-700 mb-4 pt-20">Browse Challenges</h1>
+    <div className='bg-linear-to-b from-green-50 to-white'>
+      <div className="w-11/12 mx-auto py-4 md:py-8 space-y-6 pt-20">
+      <h1 className="text-3xl font-bold text-green-700 mb-4 md:pt-20">Browse Challenges</h1>
       <ChallengeFilter filters={filters} setFilters={setFilters} />
       {loading && <Spinner />}
       {error && <p className="text-red-500 font-semibold mt-4">{error}</p>}
@@ -59,6 +60,7 @@ const Challenges = () => {
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 };

@@ -160,9 +160,9 @@ const MyActivityDetail = () => {
               </div>
               <ProgressBar progress={progress} />
               <div className="mt-6 flex flex-wrap items-center gap-4">
-                <button  onClick={() => handleProgress("increase")}  disabled={progress >= 100} className={`px-5 py-2 rounded-lg text-white font-semibold transition-all duration-300 ${ progress >= 100 ? "bg-green-900 cursor-not-allowed" : "bg-green-600 hover:bg-green-700 hover:scale-[1.03]"}`}> {progress >= 100 ? "Completed" : "+10% Progress"}</button>
+                <button  onClick={() => handleProgress("increase")}  disabled={progress >= 100} className={`px-5 py-2 rounded-lg text-white font-semibold transition-all duration-300 cursor-pointer ${ progress >= 100 ? "bg-green-900 cursor-not-allowed" : "bg-green-600 hover:bg-green-700 hover:scale-[1.03]"}`}> {progress >= 100 ? "Completed" : "+10% Progress"}</button>
 
-                <button onClick={() => handleProgress("decrease")}  disabled={progress <= 0} className="px-5 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold rounded-lg transition-all duration-300">-10% Progress</button>
+                <button onClick={() => handleProgress("decrease")}  disabled={progress <= 0} className="px-5 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold rounded-lg transition-all duration-300 cursor-pointer">-10% Progress</button>
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-2">
@@ -176,7 +176,7 @@ const MyActivityDetail = () => {
                 </div>
                 <button
                   onClick={handleStatusChange}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-md font-semibold transition-all duration-300"
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-md font-semibold transition-all duration-300 cursor-pointer"
                 >
                   Update Status
                 </button>

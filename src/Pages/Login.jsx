@@ -53,7 +53,7 @@ const Login = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-green-50 via-white to-green-100 px-4">
             <div className="w-full max-w-md bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 transform transition duration-300 hover:scale-[1.01]">
-                <h1 className="text-3xl font-extrabold text-center text-green-700 mb-6">Welcome Back to <span className="text-green-600">EcoTrack</span></h1>
+                <h1 className="text-3xl font-extrabold text-center text-green-700 mb-6">Login to <span className="text-green-600">EcoTrack</span></h1>
                 <form onSubmit={handleLogin} className="space-y-5">
                     <div>
                         <label className="block mb-1 text-gray-700 font-semibold">Email</label>

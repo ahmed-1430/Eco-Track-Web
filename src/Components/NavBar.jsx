@@ -69,7 +69,7 @@ const NavBar = () => {
                 {user.photoURL ? (
                   <img src={user.photoURL} alt={user.displayName} className="w-11 h-11 rounded-full border border-green-600 hover:scale-105 transition-transform" />
                 ) : (
-                  <FaUserCircle size={30} className="text-green-700" />
+                  <FaUserCircle size={33} className="text-green-700" />
                 )}
               </button>
               {dropdownOpen && (
@@ -81,7 +81,7 @@ const NavBar = () => {
                   </div>
                   <Link to="/profile" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-gray-700 hover:bg-green-50">Profile</Link>
                   <Link to="/my-activities" onClick={() => setDropdownOpen(false)} className="block px-4 py-2 text-gray-700 hover:bg-green-50">My Activities</Link>
-                  <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 transition">Logout</button>
+                  <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 transition cursor-pointer">Logout</button>
                 </div>
               )}
             </div>
