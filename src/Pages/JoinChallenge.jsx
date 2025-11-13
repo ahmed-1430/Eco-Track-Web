@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Spinner from "../Components/Spinner";
 import { useAuth } from "../Provider/AuthContext";
+import { FaClock, FaCalendarAlt, FaUsers } from "react-icons/fa";
 
 const JoinChallenge = () => {
     const { id } = useParams();
@@ -73,28 +74,58 @@ const JoinChallenge = () => {
 
     if (!challenge)
         return (
-            <div className="text-center mt-20 text-gray-600 font-medium"> Challenge not found.</div>
+            <div className="text-center mt-20 text-gray-600 font-medium">
+                Challenge not found.
+            </div>
         );
 
     return (
-        <div className="min-h-screen bg-linear-to-b from-green-50 to-white pt-24 pb-16">
-            <div className="w-11/12 md:w-3/4 mx-auto">
-                <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
-                    <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">Join the Challenge</h1>
-                    <div className="mb-6">
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-2">{challenge.title}</h2>
-                        <p className="text-gray-600 mb-4"> Category:{" "}
-                            <span className="font-semibold text-green-600">{challenge.category}</span>
-                        </p>
-                        <p className="text-gray-700 leading-relaxed">{challenge.description}           </p>
+        <div className="min-h-screen bg-linear-to-br from-green-50 via-white to-green-100 pt-24 pb-16 flex justify-center">
+            <div className="w-11/12 mx-auto">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10">
+                    <img src={challenge.imageUrl} alt={challenge.title} className="w-full h-64 md:h-80 object-fill transform hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                        <h1 className="text-white text-3xl md:text-4xl font-extrabold drop-shadow-md">
+                            {challenge.title}
+                        </h1>
                     </div>
+                </div>
+                <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 transition-all duration-500 hover:shadow-3xl">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-green-700 mb-4 text-center"> Join the Challenge </h2>
+                    <p className="text-gray-600 text-center mb-8 leading-relaxed max-w-2xl mx-auto"> Ready to take action? Join <span className="font-semibold text-green-700">{challenge.title}</span> and make an impact! See the details below before joining.</p>
 
-                    <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-6">
-                        <p className="font-semibold text-green-800 mb-2"> Duration: {challenge.duration} days</p>
-                        <p className="text-gray-700"> Starts on:{" "} {challenge.startDate ? new Date(challenge.startDate).toLocaleDateString() : "N/A"}</p>
-                        <p className="text-gray-700"> Ends on:{" "} {challenge.endDate ? new Date(challenge.endDate).toLocaleDateString() : "N/A"}</p>
+                    <div className="bg-green-50 border border-green-200 rounded-2xl p-6 md:p-8 mb-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <p className="text-lg font-semibold text-gray-800 mb-2">Category</p>
+                                <p className="text-green-700 font-medium">{challenge.category || "N/A"}</p>
+                            </div>
+                            <div>
+                                <p className="text-lg font-semibold text-gray-800 mb-2 flex items-center gap-2"><FaUsers /> Participants</p>
+                                <p className="text-green-700 font-medium">{challenge.participants || 0}</p>
+                            </div>
+                            <div>
+                                <p className="text-lg font-semibold text-gray-800 mb-2 flex items-center gap-2"><FaClock /> Duration</p>
+                                <p className="text-green-700 font-medium">{challenge.duration} days</p>
+                            </div>
+                            <div>
+                                <p className="text-lg font-semibold text-gray-800 mb-2 flex items-center gap-2"> <FaCalendarAlt /> Start Date</p>
+                                <p className="text-green-700 font-medium">{challenge.startDate ? new Date(challenge.startDate).toLocaleDateString() : "N/A"}</p>
+                            </div>
+                            <div>
+                                <p className="text-lg font-semibold text-gray-800 mb-2 flex items-center gap-2"><FaCalendarAlt /> End Date</p>
+                                <p className="text-green-700 font-medium">{challenge.endDate ? new Date(challenge.endDate).toLocaleDateString() : "N/A"}</p>
+                            </div>
+                        </div>
                     </div>
-                    <button onClick={handleJoin} disabled={joining || alreadyJoined} className={`w-full md:w-auto px-8 py-3 text-lg font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 ${alreadyJoined ? "bg-gray-400 text-white cursor-not-allowed" : "bg-green-600 hover:bg-green-700 text-white"}`}> {joining ? "Joining..." : alreadyJoined ? "Already Joined" : "Join Challenge Now"}</button>
+                    <div className="mb-10">
+                        <h3 className="text-2xl font-semibold text-green-700 mb-3">About the Challenge</h3>
+                        <p className="text-gray-700 leading-relaxed">{challenge.description}</p>
+                    </div>
+                    <div className="text-center">
+                        <button onClick={handleJoin} disabled={joining || alreadyJoined} className={`w-full sm:w-auto px-10 py-4 text-lg font-bold rounded-xl shadow-md transform transition-all duration-300 cursor-pointer ${alreadyJoined ? "bg-gray-400 text-white cursor-not-allowed" : "bg-green-600 hover:bg-green-700 hover:scale-105 text-white"}`}>{joining ? "Joining..." : alreadyJoined ? "Already Joined" : "Join Challenge Now"}</button>
+                    </div>
                 </div>
             </div>
         </div>
