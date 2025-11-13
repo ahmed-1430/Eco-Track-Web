@@ -8,6 +8,7 @@ import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import MyActivities from "../Pages/MyActivities";
 import JoinChallenge from "../Pages/JoinChallenge";
+import MyActivityDetail from "../Pages/MyActivityDetail";
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,16 @@ const router = createBrowserRouter([
             {
                 path: "", 
                 element: <JoinChallenge></JoinChallenge>
+            }
+        ]
+    },
+    {
+        path: "/my-activities/:id",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: "", 
+                element: <MyActivityDetail></MyActivityDetail>
             }
         ]
     },
