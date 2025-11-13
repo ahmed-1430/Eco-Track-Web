@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { useAuth } from "../Provider/AuthContext";
 import Spinner from "../Components/Spinner";
+import Loading from "../Components/Loading";
 
 const Login = () => {
     const { login, loginWithGoogle } = useAuth();
@@ -61,7 +62,7 @@ const Login = () => {
                         <label className="block mb-1 text-gray-700 font-semibold">Password</label>
                         <input type="password" placeholder="********" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
                     </div>
-                    <button type="submit" disabled={loading} className="w-full bg-green-600 text-white py-2 rounded-md font-semibold hover:bg-green-700 transition transform hover:scale-[1.01]">{loading ? <Spinner /> : "Login"}</button>
+                    <button type="submit" disabled={loading} className="w-full bg-green-600 text-white py-2 rounded-md font-semibold hover:bg-green-700 transition transform hover:scale-[1.01]">{loading ? <Loading /> : "Login"}</button>
                 </form>
 
                 <div className="my-4 flex items-center justify-center text-gray-500">
@@ -69,7 +70,7 @@ const Login = () => {
                     <span className="mx-2 text-sm">or</span>
                     <span className="border-t w-1/5 border-gray-300"></span>
                 </div>
-                <button onClick={handleGoogleLogin} disabled={loading} className="w-full flex items-center justify-center gap-2 border py-2 rounded-md hover:bg-gray-100 transition font-semibold"><FcGoogle size={22} /> {loading ? "Loading..." : "Login with Google"}</button>
+                <button onClick={handleGoogleLogin} disabled={loading} className="w-full flex items-center justify-center gap-2 border py-2 rounded-md hover:bg-gray-100 transition font-semibold"><FcGoogle size={22} /> {loading ? ` ${<Loading/>} Loading...` : "Login with Google"}</button>
                 <p className="mt-6 text-center text-gray-700 text-sm">Don’t have an account?{" "}<Link to="/register" className="text-green-600 font-semibold hover:underline">Register</Link></p>
                 <p className="text-center mt-2"><Link to="/forgot-password" className="text-gray-500 text-xs hover:underline">Forgot Password?</Link></p>
             </div>

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 import { auth, googleProvider } from '../FireBase/FireBase.init';
 import Spinner from '../Components/Spinner';
+import Loading from '../Components/Loading';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -116,7 +117,7 @@ const Register = () => {
           className="w-full mt-4 flex items-center justify-center gap-2 border py-2 rounded hover:bg-gray-100 transition"
         >
           <FcGoogle size={20} />
-          {loading ? 'Loading...' : 'Register with Google'}
+          {loading ? `${<Loading/>} Loading...` : 'Register with Google'}
         </button>
 
         <p className="mt-4 text-center text-gray-600">

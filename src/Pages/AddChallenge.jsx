@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../Components/Spinner";
 import axios from "axios";
+import Loading from "../Components/Loading";
 
 const AddChallenge = () => {
   const [formData, setFormData] = useState({
@@ -110,7 +111,7 @@ const AddChallenge = () => {
             <label className="block text-gray-700 font-semibold mb-2">Image URL</label>
             <input type="text" name="imageUrl" placeholder="Paste an image link" value={formData.imageUrl} onChange={handleChange} className="w-full border border-gray-300 p-3 rounded-xl focus:ring-4 focus:ring-green-200 outline-none transition-all"/>
           </div>
-          <button type="submit" disabled={loading} className="w-full py-3 bg-green-600 text-white font-semibold rounded-xl shadow-md hover:bg-green-700 hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">{loading ? <Spinner /> : "Add Challenge "}</button>
+          <button type="submit" disabled={loading} className="w-full py-3 bg-green-600 text-white font-semibold rounded-xl shadow-md hover:bg-green-700 hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">{loading ? <Loading /> : "Add Challenge "}</button>
         </form>
       </div>
     </div>
