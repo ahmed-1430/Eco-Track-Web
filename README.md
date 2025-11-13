@@ -1,16 +1,53 @@
-# React + Vite
+# 🌍 EcoTrack — Sustainable Living Community  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **EcoTrack**, a community-driven platform built to inspire sustainable living through eco challenges, green events, and practical eco-tips.  
+Together, we track, share, and celebrate every small step toward a greener planet. 🌱  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Website  
+**Client Site:** [EcoTrack Web](https://eco-track-web-76523.web.app/)  
+**Server Site:** [EcoTrack Server](https://eco-track-server-zeta.vercel.app/)  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features  
 
-## Expanding the ESLint configuration
+- 🌿 Dynamic Home Page with Hero Banner, Challenges, Tips, and Events  
+- 🔥 Firebase Authentication (Email/Password + Google Login)  
+- 🧭 Protected Dashboard for user activities  
+- 💬 Toast notifications for all success/error messages  
+- 📊 Recharts integration for progress visualization  
+- 🧩 Responsive design for all devices  
+- 🎨 Tailwind-powered modern eco-themed UI  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ Tech Stack  
+
+| Category | Technology |
+|-----------|-------------|
+| Framework | ⚛️ React 19 |
+| Styling | 🎨 Tailwind CSS |
+| Routing | 🧭 React Router v7 |
+| API Calls | 🌐 Axios |
+| Authentication | 🔥 Firebase |
+| Charts | 📊 Recharts |
+| Notifications | 🔔 React Toastify |
+| Carousel | 🌀 Swiper.js |
+
+---
+
+## 👨‍💻 Developer Information
+
+Developed by:  Ahmed  
+📧 Email: ahmedtexting@gmail.com  
+ 
+🌐 Portfolio: 
+
+💚 “Small steps today, greener tomorrow.”
+
+---
+
+## 📜 License  
+© 2025 **EcoTrack** — All Rights Reserved 🌿  
