@@ -12,6 +12,7 @@ import MyActivityDetail from "../Pages/MyActivityDetail";
 import Reset from "../Pages/Reset";
 import Profile from "../Pages/Profile";
 import PrivateRoutes from "./PrivateRoutes";
+import NotFound from "../Pages/NotFound";
 
 
 const router = createBrowserRouter([
@@ -138,7 +139,7 @@ const router = createBrowserRouter([
 
     {
         path: "/*",
-        element: <h1>404</h1>
+        element: <NotFound></NotFound>
     },
 ])
 export default router
