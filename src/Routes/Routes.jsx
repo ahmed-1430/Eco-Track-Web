@@ -11,6 +11,7 @@ import JoinChallenge from "../Pages/JoinChallenge";
 import MyActivityDetail from "../Pages/MyActivityDetail";
 import Reset from "../Pages/Reset";
 import Profile from "../Pages/Profile";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -19,17 +20,17 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path:"",
+                path: "",
                 element: <Home></Home>
             }
-        ]        
+        ]
     },
     {
         path: "/challenges",
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
+                path: "",
                 element: <Challenges></Challenges>
             }
         ]
@@ -39,18 +40,20 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
+                path: "",
                 element: <ChallengeDetail></ChallengeDetail>
             }
         ]
-    },  
+    },
     {
         path: "/challenges/add",
         element: <MainLayout></MainLayout>,
         children: [
             {
                 path: "",
-                element: <AddChallenge></AddChallenge>
+                element: <PrivateRoutes>
+                    <AddChallenge></AddChallenge>
+                </PrivateRoutes>
             }
         ]
     },
@@ -59,8 +62,10 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
-                element: <MyActivities></MyActivities>
+                path: "",
+                element: <PrivateRoutes>
+                    <MyActivities></MyActivities>
+                </PrivateRoutes>
             }
         ]
     },
@@ -69,8 +74,10 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
-                element: <JoinChallenge></JoinChallenge>
+                path: "",
+                element: <PrivateRoutes>
+                    <JoinChallenge></JoinChallenge>
+                </PrivateRoutes>
             }
         ]
     },
@@ -79,8 +86,10 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
-                element: <MyActivityDetail></MyActivityDetail>
+                path: "",
+                element: <PrivateRoutes>
+                    <MyActivityDetail></MyActivityDetail>
+                </PrivateRoutes>
             }
         ]
     },
@@ -89,7 +98,7 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
+                path: "",
                 element: <Register></Register>
             }
         ]
@@ -99,7 +108,7 @@ const router = createBrowserRouter([
         element: <MainLayout></MainLayout>,
         children: [
             {
-                path: "", 
+                path: "",
                 element: <Login></Login>
             }
         ]
@@ -110,7 +119,9 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <Profile></Profile>
+                element: <PrivateRoutes>
+                    <Profile></Profile>
+                </PrivateRoutes>
             }
         ]
     },
@@ -124,7 +135,7 @@ const router = createBrowserRouter([
             }
         ]
     },
-    
+
     {
         path: "/*",
         element: <h1>404</h1>
