@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import MyActivities from "../Pages/MyActivities";
 import JoinChallenge from "../Pages/JoinChallenge";
 import MyActivityDetail from "../Pages/MyActivityDetail";
+import Reset from "../Pages/Reset";
 
 
 const router = createBrowserRouter([
@@ -99,6 +100,16 @@ const router = createBrowserRouter([
             {
                 path: "", 
                 element: <Login></Login>
+            }
+        ]
+    },
+    {
+        path: "/forgot-password",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: "",
+                element: <Reset></Reset>
             }
         ]
     },
