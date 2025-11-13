@@ -36,7 +36,7 @@ const Reset = () => {
                         <input type="email" name="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition text-gray-700" />
                     </div>
 
-                    <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 bg-linear-to-r from-green-600 to-emerald-500 text-white py-2.5 rounded-lg font-semibold hover:opacity-90 shadow-md transition duration-200">
+                    <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 bg-linear-to-r from-green-600 to-emerald-500 text-white py-2.5 rounded-lg font-semibold hover:opacity-90 shadow-md transition duration-200 cursor-pointer">
                         {loading ? (
                             <Loading />
                         ) : (
