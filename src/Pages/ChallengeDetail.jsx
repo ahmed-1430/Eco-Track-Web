@@ -22,8 +22,8 @@ const ChallengeDetail = () => {
                 const res = await axios.get(`${API_BASE}/api/challenges/${id}`);
                 setChallenge(res.data.data);
             } catch (err) {
-                console.error(err);
-                toast.error("Failed to load challenge. Please refresh the page.");
+                // console.error(err);
+                toast.error(`Failed to load challenge. Please refresh the page. ${err}`);
             } finally {
                 setLoading(false);
             }
@@ -72,7 +72,7 @@ const ChallengeDetail = () => {
         <div className="min-h-screen bg-linear-to-b from-green-50 to-white pt-24 pb-16">
             <div className="w-11/12 md:w-11/12 mx-auto">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img src={challenge.imageUrl} alt={challenge.title} className="w-full h-64 md:h-96 object-cover transform hover:scale-105 transition-transform duration-700"/>
+                    <img src={challenge.imageUrl} alt={challenge.title} className="w-full h-64 md:h-96 object-cover transform hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-6 md:p-10">
                         <h1 className="text-white text-3xl md:text-5xl font-extrabold drop-shadow-lg"> {challenge.title}</h1>
                     </div>

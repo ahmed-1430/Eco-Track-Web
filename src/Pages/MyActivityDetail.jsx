@@ -70,8 +70,8 @@ const MyActivityDetail = () => {
         }
         setHistory(timeline);
       } catch (err) {
-        console.error(err);
-        toast.error("Failed to load activity details.");
+        // console.error(err);
+        toast.error(`Failed to load activity details. ${err}`);
       } finally {
         setLoading(false);
       }
@@ -101,8 +101,8 @@ const MyActivityDetail = () => {
         { date: new Date().toLocaleDateString(), progress: newProgress },
       ]);
     } catch (error) {
-      console.error(error);
-      toast.error("Failed to update progress.");
+      // console.error(error);
+      toast.error(`Failed to update progress. ${error}`);
     }
   };
 
@@ -115,8 +115,8 @@ const MyActivityDetail = () => {
       setStatus(newStatus);
       toast.success(`Status changed to "${newStatus}"`);
     } catch (error) {
-      console.error(error);
-      toast.error("Failed to update status.");
+      // console.error(error);
+      toast.error(`Failed to update status. ${error}`);
     }
   };
 
