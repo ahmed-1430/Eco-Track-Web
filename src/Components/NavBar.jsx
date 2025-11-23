@@ -75,7 +75,7 @@ const NavBar = () => {
               {dropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2 animate-fade-in">
                   <div className="px-4 pb-2 border-b border-gray-100">
-                    <p className="font-semibold text-green-700 text-sm truncate">
+                    <p className="font-semibold text-green-700 truncate">
                       {user.displayName || user.email}
                     </p>
                   </div>
