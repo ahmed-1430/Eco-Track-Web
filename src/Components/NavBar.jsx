@@ -47,7 +47,7 @@ const NavBar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-sm shadow-md z-50">
       <nav className="w-11/12 mx-auto flex items-center py-3">
         <Link to="/" className="flex items-center space-x-2">
           <img src={EcoTrackLogo} alt="EcoTrack Logo" className="w-10 h-10" />
