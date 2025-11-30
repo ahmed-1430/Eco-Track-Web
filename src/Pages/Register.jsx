@@ -127,8 +127,7 @@ const Register = () => {
 
           <div className="relative">
             <FaLock className="absolute left-3 top-3 text-green-600" />
-            <input type={showPassword ? "text" : "password"} name="password"
-              placeholder="Password" value={formData.password}
+            <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" value={formData.password}
               onChange={handleChange}
               className={`w-full pl-10 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 transition ${
                 passwordError ? "border-red-400 focus:ring-red-400" : "focus:ring-green-500"

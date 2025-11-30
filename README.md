@@ -25,7 +25,7 @@ Together, we track, share, and celebrate every small step toward a greener plane
 
 ## ⚙️ Tech Stack  
 
-| Category | Technology |
+| Category | Technology | 
 |-----------|-------------|
 | Framework |  React 19 |
 | Styling |  Tailwind CSS |
