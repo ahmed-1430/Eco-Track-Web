@@ -49,5 +49,4 @@ Developed by:  Ahmed
 
 ---
 
-##  License  
-© 2025 **EcoTrack** — All Rights Reserved   
+
