@@ -48,5 +48,6 @@ Developed by:  Ahmed
  “Small steps today, greener tomorrow.”
 
 ---
-
+##  License  
+© 2025 **EcoTrack** — All Rights Reserved   
 
